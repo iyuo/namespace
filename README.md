@@ -1,0 +1,3 @@
+# Namespace
+
+The namespace plugin
