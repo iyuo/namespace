@@ -1,15 +1,19 @@
-import * as iyuo from "@iyuo/context";
-import { Context } from "../src/namespace";
+import { Context } from "@iyuo/context";
+import { namespace, NameSpaceContext } from "../src/namespace"
 
 describe("Simple tests", () => {
   test("Create a context", () => {
-    let obj = new iyuo.Context("Test");
+    let obj = new Context("Test");
     expect(obj.context()).toBe("Test");
   });
 
   test("Create a namespace", () => {
-    let obj = new iyuo.Context("Test") as Context<string>;
+    let obj = new Context({});
+    expect(namespace.call(obj.context(), 'a.b.c')).toBeDefined();
+  });
 
-    expect(obj.namespace('a.b.c')).toBeDefined();
+  test("Create a plugin", () => {
+    let obj = new Context({});
+    expect((obj as NameSpaceContext<any>).namespace('a.b.c')).toBeDefined();
   });
 });

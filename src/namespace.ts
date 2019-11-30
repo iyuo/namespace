@@ -1,8 +1,4 @@
-import {Context as iyuoContext} from "@iyuo/context";
-
-export declare class Context<T> extends iyuoContext<T> {
-  constructor(context: T);
-}
+import * as iyuo from "@iyuo/context";
 
 export class Namespace {
   public name: string;
@@ -15,16 +11,20 @@ export class Namespace {
   }
 }
 
-export interface Context<T> {
-  namespace(name: string): Context<Namespace>;
+export interface NameSpaceContext<T> extends iyuo.Context<T> {
+  namespace(name: string): NameSpaceContext<Namespace>;
 }
 
-Context.prototype.namespace = function(name: string): Context<Namespace> {
-  let ns = this.context(),
+export function namespace(this: any, name: string): NameSpaceContext<Namespace> {
+  let ns = this,
     p = name.split(/[\[\]."']/gi).filter(x => !!x);
   for (var i = 0; i < p.length; i++) {
     ns[p[i]] = ns[p[i]] || new Namespace(p[i]);
     ns = ns[p[i]];
   }
-  return new Context<Namespace>(ns);
+  return new iyuo.Context<Namespace>(ns) as NameSpaceContext<Namespace>;
+}
+
+(iyuo.Context.prototype as any).namespace = function(name: string): NameSpaceContext<Namespace> {
+  return namespace.call(this.context(), name);
 };
