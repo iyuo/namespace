@@ -1,25 +1,27 @@
-import { Context } from '@iyuo/context';
-
+/**
+ * Namespace class
+ */
 var Namespace = /** @class */ (function () {
     function Namespace(name) {
         this.name = name;
-        this.init(name);
+        this.init();
     }
-    Namespace.prototype.init = function (name) {
-    };
+    Namespace.prototype.init = function () { };
     return Namespace;
 }());
+/**
+ * Creates namespace
+ * @param this Any object or a function
+ * @param name The name, separate by '"[]. symbols, like "my.awesome.namespace[with][details]"
+ */
 function namespace(name) {
-    var ns = this, p = name.split(/[\[\]."']/gi).filter(function (x) { return !!x; });
+    var ns = this, p = name.split(/[\[\]."']/gi).filter(function (x) { return !!x && !!x.trim(); });
     for (var i = 0; i < p.length; i++) {
         ns[p[i]] = ns[p[i]] || new Namespace(p[i]);
         ns = ns[p[i]];
     }
-    return new Context(ns);
+    return ns;
 }
-Context.prototype.namespace = function (name) {
-    return namespace.call(this.context(), name);
-};
 
 export { Namespace, namespace };
 //# sourceMappingURL=namespace.es.js.map

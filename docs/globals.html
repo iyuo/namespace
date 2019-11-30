@@ -2375,9 +2375,6 @@ img {
 		<li class=" tsd-kind-class">
 			<a href="classes/namespace.html" class="tsd-kind-icon">Namespace</a>
 		</li>
-		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="interfaces/namespacecontext.html" class="tsd-kind-icon">Name<wbr>Space<wbr>Context</a>
-		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#namespace" class="tsd-kind-icon">namespace</a>
 		</li>
@@ -2387,9 +2384,49 @@ img {
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
 			<a href="#namespace" id="namespace" style="color: inherit; text-decoration: none;">
-				<h1>Namespace</h1>
+				<h1>namespace</h1>
 			</a>
-			<p>The namespace plugin</p>
+			<p><a href="https://www.npmjs.com/package/@iyuo/namespace"><img src="https://badge.fury.io/js/%40iyuo%2Fnamespace.svg" alt="NPM version"></a>
+				<a href="https://github.com/iyuo/namespace/blob/master/LICENSE"><img src="https://img.shields.io/github/license/iyuo/namespace" alt="License"></a>
+			<a href="https://twitter.com/intent/tweet?text=Wow:&amp;url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnamespace"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnamespace" alt="Twitter"></a></p>
+			<p>The TypeScript plugin for @iyuo/context ecosystem.</p>
+			<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+				<h1>Install</h1>
+			</a>
+			<p>Node:</p>
+			<p><a href="https://www.npmjs.com/package/@iyuo/namespace"><img src="https://nodei.co/npm/@iyuo/namespace.png?downloads=true&downloadRank=true&stars=true" alt="https://nodei.co/npm/@iyuo/namespace.png?downloads=true&amp;downloadRank=true&amp;stars=true"></a></p>
+			<pre><code class="language-shell">npm install @iyuo/namespace</code></pre>
+			<p><a href="//iyuo.github.io/namespace/dist/namespace.js">Browser</a></p>
+			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//iyuo.github.io/namespace/dist/namespace.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+			<a href="#import-package-to-the-project" id="import-package-to-the-project" style="color: inherit; text-decoration: none;">
+				<h2>Import package to the project</h2>
+			</a>
+			<p>TypeScript:</p>
+			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">namespace</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"@iyuo/namespace"</span>;</code></pre>
+			<p>or JavaScript:</p>
+			<pre><code class="language-javascript"><span class="hljs-keyword">var</span> iyuo = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@iyuo/namespace"</span>);
+<span class="hljs-keyword">var</span> namespace = iyuo.namespace;</code></pre>
+			<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+				<h1>Documentation</h1>
+			</a>
+			<p>Link: <a href="https://iyuo.github.io/namespace/docs/index.html">https://iyuo.github.io/namespace/docs/index.html</a></p>
+			<a href="#sample" id="sample" style="color: inherit; text-decoration: none;">
+				<h1>Sample</h1>
+			</a>
+			<pre><code class="language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"><span class="hljs-keyword">this</span>: <span class="hljs-built_in">number</span>[]</span>): <span class="hljs-title">number</span> </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.reduce((previousValue: <span class="hljs-built_in">number</span>, currentValue: <span class="hljs-built_in">number</span>): <span class="hljs-function"><span class="hljs-params">number</span> =&gt;</span> {
+     <span class="hljs-keyword">return</span> previousValue + currentValue;
+   }, <span class="hljs-number">0</span>);
+}
+
+<span class="hljs-keyword">var</span> numbers = <span class="hljs-keyword">new</span> <span class="hljs-keyword">namespace</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+<span class="hljs-keyword">var</span> takeSum = numbers.make(sum);
+<span class="hljs-built_in">console</span>.log(takeSum); <span class="hljs-comment">// 15</span></code></pre>
+			<a href="#rights-and-agreements" id="rights-and-agreements" style="color: inherit; text-decoration: none;">
+				<h1>Rights and Agreements</h1>
+			</a>
+			<p>License <a href="https://github.com/iyuo/namespace/blob/master/LICENSE">Apache-2.0</a></p>
+			<p>Copyright 2019 Oleksandr iyuo</p>
 		</div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
@@ -2399,12 +2436,6 @@ img {
 						<h3>Classes</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-class"><a href="classes/namespace.html" class="tsd-kind-icon">Namespace</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
-						<h3>Interfaces</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/namespacecontext.html" class="tsd-kind-icon">Name<wbr>Space<wbr>Context</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -2422,25 +2453,36 @@ img {
 				<a name="namespace" class="tsd-anchor"></a>
 				<h3>namespace</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">namespace<span class="tsd-signature-symbol">(</span>this<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/namespacecontext.html" class="tsd-signature-type">NameSpaceContext</a><span class="tsd-signature-symbol">&lt;</span><a href="classes/namespace.html" class="tsd-signature-type">Namespace</a><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">namespace<span class="tsd-signature-symbol">(</span>this<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="classes/namespace.html" class="tsd-signature-type">Namespace</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/iyuo/namespace/blob/1d1d56c/src/namespace.ts#L18">src/namespace.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/iyuo/namespace/blob/6b86c9f/src/namespace.ts#L20">namespace.ts:20</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Creates namespace</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>this: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Any object or a function</p>
+								</div>
 							</li>
 							<li>
 								<h5>name: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The name, separate by &#39;&quot;[]. symbols, like &quot;my.awesome.namespace[with][details]&quot;</p>
+								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="interfaces/namespacecontext.html" class="tsd-signature-type">NameSpaceContext</a><span class="tsd-signature-symbol">&lt;</span><a href="classes/namespace.html" class="tsd-signature-type">Namespace</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="classes/namespace.html" class="tsd-signature-type">Namespace</a></h4>
 					</li>
 				</ul>
 			</section>

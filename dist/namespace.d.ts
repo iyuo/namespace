@@ -1,10 +1,15 @@
-import * as iyuo from "@iyuo/context";
+/**
+ * Namespace class
+ */
 export declare class Namespace {
+    /** The name of the namespace */
     name: string;
     constructor(name: string);
-    init(name: string): void;
+    init(): void;
 }
-export interface NameSpaceContext<T> extends iyuo.Context<T> {
-    namespace(name: string): NameSpaceContext<Namespace>;
-}
-export declare function namespace(this: any, name: string): NameSpaceContext<Namespace>;
+/**
+ * Creates namespace
+ * @param this Any object or a function
+ * @param name The name, separate by '"[]. symbols, like "my.awesome.namespace[with][details]"
+ */
+export declare function namespace(this: any, name: string): Namespace;

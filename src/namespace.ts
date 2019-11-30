@@ -1,30 +1,31 @@
-import * as iyuo from "@iyuo/context";
-
+/**
+ * Namespace class
+ */
 export class Namespace {
+  /** The name of the namespace */
   public name: string;
   constructor(name: string) {
     this.name = name;
-    this.init(name);
+    this.init();
   }
 
-  public init(name: string) {
-  }
+  public init() {}
 }
 
-export interface NameSpaceContext<T> extends iyuo.Context<T> {
-  namespace(name: string): NameSpaceContext<Namespace>;
-}
-
-export function namespace(this: any, name: string): NameSpaceContext<Namespace> {
+/**
+ * Creates namespace
+ * @param this Any object or a function
+ * @param name The name, separate by '"[]. symbols, like "my.awesome.namespace[with][details]"
+ */
+export function namespace(
+  this: any,
+  name: string
+): Namespace {
   let ns = this,
-    p = name.split(/[\[\]."']/gi).filter(x => !!x);
+    p = name.split(/[\[\]."']/gi).filter(x => !!x && !!x.trim());
   for (var i = 0; i < p.length; i++) {
     ns[p[i]] = ns[p[i]] || new Namespace(p[i]);
     ns = ns[p[i]];
   }
-  return new iyuo.Context<Namespace>(ns) as NameSpaceContext<Namespace>;
+  return ns;
 }
-
-(iyuo.Context.prototype as any).namespace = function(name: string): NameSpaceContext<Namespace> {
-  return namespace.call(this.context(), name);
-};
