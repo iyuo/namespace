@@ -1,7 +1,7 @@
 {
   "name": "@iyuo/namespace",
   "version": "1.0.0",
-  "description": "The namespace plugin",
+  "description": "The TypeScript plugin Namespace for @iyuo/context ecosystem.",
   "author": "lopatnov",
   "license": "Apache-2.0",
   "homepage": "https://iyuo.github.io/context/",
@@ -20,7 +20,8 @@
   },
   "keywords": [
     "context",
-    "typescript"
+    "typescript",
+    "namespace"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
