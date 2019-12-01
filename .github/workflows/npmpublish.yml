@@ -38,7 +38,7 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@lopatnov'
-      - run: npm install
+      - run: npm ci
       - run: npm run publish-gpr
       - run: npm publish --access=public
         env:
