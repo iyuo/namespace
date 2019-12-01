@@ -26,10 +26,15 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+      - run: npm logout
+      - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
+          node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@lopatnov'
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GPR_PAT }}
           #NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: npm logout
