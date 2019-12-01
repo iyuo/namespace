@@ -1,3 +1,4 @@
+import {pluginize} from "@iyuo/context";
 /**
  * Namespace class
  */
@@ -21,11 +22,13 @@ export function namespace(
   this: any,
   name: string
 ): Namespace {
-  let ns = this,
+  let nsObj = this,
     p = name.split(/[\[\]."']/gi).filter(x => !!x && !!x.trim());
   for (var i = 0; i < p.length; i++) {
-    ns[p[i]] = ns[p[i]] || new Namespace(p[i]);
-    ns = ns[p[i]];
+    nsObj[p[i]] = nsObj[p[i]] || new Namespace(p[i]);
+    nsObj = nsObj[p[i]];
   }
-  return ns;
+  return nsObj;
 }
+
+export var ns = pluginize(namespace);

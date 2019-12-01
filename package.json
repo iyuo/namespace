@@ -1,6 +1,6 @@
 {
   "name": "@iyuo/namespace",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "The TypeScript plugin Namespace for @iyuo/context ecosystem.",
   "author": "lopatnov",
   "license": "Apache-2.0",
@@ -48,6 +48,6 @@
     "typescript": "^3.6.4"
   },
   "peerDependencies": {
-    "@iyuo/context": "^1.1.0"
+    "@iyuo/context": "^1.2.1"
   }
 }

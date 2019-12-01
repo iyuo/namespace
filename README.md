@@ -27,7 +27,7 @@ npm install @iyuo/namespace
 TypeScript:
 
 ```typescript
-import { namespace } from "@iyuo/namespace";
+import { namespace, ns } from "@iyuo/namespace";
 ```
 
 or JavaScript:
@@ -41,15 +41,32 @@ var namespace = iyuo.namespace;
 
 Link: [https://iyuo.github.io/namespace/docs/index.html](https://iyuo.github.io/namespace/docs/index.html)
 
-# Sample
+# Plugin Sample
+
+```ts
+let obj: any = {};
+new Context(obj)
+.task(ns("uno.dos.tres"))
+.task(ns("quatro.cinco.seis"));
+
+console.log(obj);
+```
+
+# Function Sample
+
+```ts
+let obj: any = {};
+namespace.call(obj, "uno.dos.tres"); // new Context(obj).task(ns("uno.dos.tres"))
+namespace.call(obj, "quatro.cinco.seis"); // .task(ns("quatro.cinco.seis"));
+
+console.log(obj);
+```
 
 ```ts
 let obj: any = {};
 let c = new Context(obj);
-c.use("uno.dos.tres")
-  .map(namespace)
-  .use("quatro.cinco.seis")
-  .map(namespace);
+c.map(namespace, "uno.dos.tres")
+ .map(namespace, "quatro.cinco.seis");
 
 console.log(obj.uno.dos.tres.quatro.cinco.seis);
 ```

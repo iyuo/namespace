@@ -2375,6 +2375,9 @@ img {
 		<li class=" tsd-kind-class">
 			<a href="classes/namespace.html" class="tsd-kind-icon">Namespace</a>
 		</li>
+		<li class=" tsd-kind-variable">
+			<a href="globals.html#ns" class="tsd-kind-icon">ns</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#namespace" class="tsd-kind-icon">namespace</a>
 		</li>
@@ -2389,7 +2392,7 @@ img {
 			<p><a href="https://www.npmjs.com/package/@iyuo/namespace"><img src="https://badge.fury.io/js/%40iyuo%2Fnamespace.svg" alt="NPM version"></a>
 				<a href="https://github.com/iyuo/namespace/blob/master/LICENSE"><img src="https://img.shields.io/github/license/iyuo/namespace" alt="License"></a>
 			<a href="https://twitter.com/intent/tweet?text=Wow:&amp;url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnamespace"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnamespace" alt="Twitter"></a></p>
-			<p>The TypeScript plugin for @iyuo/context ecosystem.</p>
+			<p>The TypeScript plugin Namespace for @iyuo/context ecosystem.</p>
 			<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 				<h1>Install</h1>
 			</a>
@@ -2413,15 +2416,14 @@ img {
 			<a href="#sample" id="sample" style="color: inherit; text-decoration: none;">
 				<h1>Sample</h1>
 			</a>
-			<pre><code class="language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"><span class="hljs-keyword">this</span>: <span class="hljs-built_in">number</span>[]</span>): <span class="hljs-title">number</span> </span>{
-   <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.reduce((previousValue: <span class="hljs-built_in">number</span>, currentValue: <span class="hljs-built_in">number</span>): <span class="hljs-function"><span class="hljs-params">number</span> =&gt;</span> {
-     <span class="hljs-keyword">return</span> previousValue + currentValue;
-   }, <span class="hljs-number">0</span>);
-}
+			<pre><code class="language-ts"><span class="hljs-keyword">let</span> obj: <span class="hljs-built_in">any</span> = {};
+<span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> Context(obj);
+c.use(<span class="hljs-string">"uno.dos.tres"</span>)
+  .map(<span class="hljs-keyword">namespace</span>)
+  .use(<span class="hljs-string">"quatro.cinco.seis"</span>)
+  .map(<span class="hljs-keyword">namespace</span>);
 
-<span class="hljs-keyword">var</span> numbers = <span class="hljs-keyword">new</span> <span class="hljs-keyword">namespace</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
-<span class="hljs-keyword">var</span> takeSum = numbers.make(sum);
-<span class="hljs-built_in">console</span>.log(takeSum); <span class="hljs-comment">// 15</span></code></pre>
+<span class="hljs-built_in">console</span>.log(obj.uno.dos.tres.quatro.cinco.seis);</code></pre>
 			<a href="#rights-and-agreements" id="rights-and-agreements" style="color: inherit; text-decoration: none;">
 				<h1>Rights and Agreements</h1>
 			</a>
@@ -2439,11 +2441,51 @@ img {
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
+						<h3>Variables</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-variable"><a href="globals.html#ns" class="tsd-kind-icon">ns</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function"><a href="globals.html#namespace" class="tsd-kind-icon">namespace</a></li>
 						</ul>
 					</section>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Variables</h2>
+			<section class="tsd-panel tsd-member tsd-kind-variable">
+				<a name="ns" class="tsd-anchor"></a>
+				<h3>ns</h3>
+				<div class="tsd-signature tsd-kind-icon">ns<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pluginize(namespace)</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in src/namespace.ts:34</li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IPlugin</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IPlugin</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TContext</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 			</section>
 		</section>
@@ -2459,7 +2501,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/iyuo/namespace/blob/6b86c9f/src/namespace.ts#L20">namespace.ts:20</a></li>
+								<li>Defined in src/namespace.ts:21</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

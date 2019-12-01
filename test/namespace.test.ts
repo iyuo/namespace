@@ -1,5 +1,5 @@
 import { Context } from "@iyuo/context";
-import { namespace } from "../src/namespace"
+import { namespace, ns } from "../src/namespace"
 
 describe("Simple tests", () => {
   test("Create a context", () => {
@@ -16,7 +16,7 @@ describe("Simple tests", () => {
     expect(obj.a.b.c).toBeDefined();
   });
 
-  test("Create a plugin", () => {
+  test("Use function", () => {
     let obj: any = {};
     let c = new Context(obj);
     c.use("uno.dos.tres")
@@ -25,5 +25,16 @@ describe("Simple tests", () => {
     .map(namespace);
 
     expect(obj.uno.dos.tres.quatro.cinco.seis).toBeDefined();
+  });
+
+  test("Use plugin", () => {
+    let obj: any = {};
+    new Context(obj)
+    .task(ns("uno.dos.tres"))
+    .task(ns("quatro.cinco.seis"));
+
+    expect(obj.uno.dos.tres).toBeDefined();
+    expect(obj.quatro.cinco.seis).toBeDefined();
+    expect(obj.uno.dos.tres.quatro).not.toBeDefined();
   });
 });

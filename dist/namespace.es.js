@@ -1,3 +1,5 @@
+import { pluginize } from '@iyuo/context';
+
 /**
  * Namespace class
  */
@@ -15,13 +17,14 @@ var Namespace = /** @class */ (function () {
  * @param name The name, separate by '"[]. symbols, like "my.awesome.namespace[with][details]"
  */
 function namespace(name) {
-    var ns = this, p = name.split(/[\[\]."']/gi).filter(function (x) { return !!x && !!x.trim(); });
+    var nsObj = this, p = name.split(/[\[\]."']/gi).filter(function (x) { return !!x && !!x.trim(); });
     for (var i = 0; i < p.length; i++) {
-        ns[p[i]] = ns[p[i]] || new Namespace(p[i]);
-        ns = ns[p[i]];
+        nsObj[p[i]] = nsObj[p[i]] || new Namespace(p[i]);
+        nsObj = nsObj[p[i]];
     }
-    return ns;
+    return nsObj;
 }
+var ns = pluginize(namespace);
 
-export { Namespace, namespace };
+export { Namespace, namespace, ns };
 //# sourceMappingURL=namespace.es.js.map
