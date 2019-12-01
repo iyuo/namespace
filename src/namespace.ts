@@ -31,4 +31,7 @@ export function namespace(
   return nsObj;
 }
 
+/**
+ * namespace function plugin for @iyuo/context ecosystem
+ */
 export var ns = pluginize(namespace);

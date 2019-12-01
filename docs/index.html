@@ -2405,7 +2405,7 @@ img {
 				<h2>Import package to the project</h2>
 			</a>
 			<p>TypeScript:</p>
-			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">namespace</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"@iyuo/namespace"</span>;</code></pre>
+			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">namespace</span>, ns } <span class="hljs-keyword">from</span> <span class="hljs-string">"@iyuo/namespace"</span>;</code></pre>
 			<p>or JavaScript:</p>
 			<pre><code class="language-javascript"><span class="hljs-keyword">var</span> iyuo = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@iyuo/namespace"</span>);
 <span class="hljs-keyword">var</span> namespace = iyuo.namespace;</code></pre>
@@ -2413,15 +2413,27 @@ img {
 				<h1>Documentation</h1>
 			</a>
 			<p>Link: <a href="https://iyuo.github.io/namespace/docs/index.html">https://iyuo.github.io/namespace/docs/index.html</a></p>
-			<a href="#sample" id="sample" style="color: inherit; text-decoration: none;">
-				<h1>Sample</h1>
+			<a href="#plugin-sample" id="plugin-sample" style="color: inherit; text-decoration: none;">
+				<h1>Plugin Sample</h1>
 			</a>
 			<pre><code class="language-ts"><span class="hljs-keyword">let</span> obj: <span class="hljs-built_in">any</span> = {};
+<span class="hljs-keyword">new</span> Context(obj)
+.task(ns(<span class="hljs-string">"uno.dos.tres"</span>))
+.task(ns(<span class="hljs-string">"quatro.cinco.seis"</span>));
+
+<span class="hljs-built_in">console</span>.log(obj);</code></pre>
+			<a href="#function-sample" id="function-sample" style="color: inherit; text-decoration: none;">
+				<h1>Function Sample</h1>
+			</a>
+			<pre><code class="language-ts"><span class="hljs-keyword">let</span> obj: <span class="hljs-built_in">any</span> = {};
+<span class="hljs-keyword">namespace</span>.call(obj, <span class="hljs-string">"uno.dos.tres"</span>); <span class="hljs-comment">// new Context(obj).task(ns("uno.dos.tres"))</span>
+<span class="hljs-keyword">namespace</span>.call(obj, <span class="hljs-string">"quatro.cinco.seis"</span>); <span class="hljs-comment">// .task(ns("quatro.cinco.seis"));</span>
+
+<span class="hljs-built_in">console</span>.log(obj);</code></pre>
+			<pre><code class="language-ts"><span class="hljs-keyword">let</span> obj: <span class="hljs-built_in">any</span> = {};
 <span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> Context(obj);
-c.use(<span class="hljs-string">"uno.dos.tres"</span>)
-  .map(<span class="hljs-keyword">namespace</span>)
-  .use(<span class="hljs-string">"quatro.cinco.seis"</span>)
-  .map(<span class="hljs-keyword">namespace</span>);
+c.map(<span class="hljs-keyword">namespace</span>, <span class="hljs-string">"uno.dos.tres"</span>)
+ .map(<span class="hljs-keyword">namespace</span>, <span class="hljs-string">"quatro.cinco.seis"</span>);
 
 <span class="hljs-built_in">console</span>.log(obj.uno.dos.tres.quatro.cinco.seis);</code></pre>
 			<a href="#rights-and-agreements" id="rights-and-agreements" style="color: inherit; text-decoration: none;">
@@ -2464,9 +2476,14 @@ c.use(<span class="hljs-string">"uno.dos.tres"</span>)
 				<div class="tsd-signature tsd-kind-icon">ns<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pluginize(namespace)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in src/namespace.ts:34</li>
+						<li>Defined in src/namespace.ts:37</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>namespace function plugin for @iyuo/context ecosystem</p>
+					</div>
+				</div>
 				<div class="tsd-type-declaration">
 					<h4>Type declaration</h4>
 					<ul class="tsd-parameters">

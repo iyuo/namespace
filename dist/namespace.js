@@ -28,6 +28,9 @@
       }
       return nsObj;
   }
+  /**
+   * namespace function plugin for @iyuo/context ecosystem
+   */
   var ns = context.pluginize(namespace);
 
   exports.Namespace = Namespace;
