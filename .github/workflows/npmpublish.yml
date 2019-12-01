@@ -13,7 +13,7 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  publish:
+  publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -23,10 +23,16 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
-      - run: npm publish
+      - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
-      - run: npm logout
+
+  publish-gpr:
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
@@ -34,8 +40,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@lopatnov'
       - run: npm install
-      - run: npm publish
+      - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GPR_PAT }}
           #NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm logout
