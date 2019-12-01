@@ -71,6 +71,12 @@ c.map(namespace, "uno.dos.tres")
 console.log(obj.uno.dos.tres.quatro.cinco.seis);
 ```
 
+# Demo
+
+See, how it's working: [https://runkit.com/lopatnov/namespace-demo](https://runkit.com/lopatnov/namespace-demo)
+
+Test it with a runkit: [https://npm.runkit.com/@iyuo/namespace](https://npm.runkit.com/@iyuo/namespace)
+
 # Rights and Agreements
 
 License [Apache-2.0](https://github.com/iyuo/namespace/blob/master/LICENSE)
