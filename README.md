@@ -81,4 +81,4 @@ Test it with a runkit: [https://npm.runkit.com/@iyuo/namespace](https://npm.runk
 
 License [Apache-2.0](https://github.com/iyuo/namespace/blob/master/LICENSE)
 
-Copyright 2019 Oleksandr iyuo
+Copyright 2019 Oleksandr Lopatnov
