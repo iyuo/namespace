@@ -1,4 +1,4 @@
-import {pluginize} from "@iyuo/context";
+import { pluginize } from "@iyuo/context";
 /**
  * Namespace class
  */

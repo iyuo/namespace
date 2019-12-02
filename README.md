@@ -73,7 +73,7 @@ console.log(obj.uno.dos.tres.quatro.cinco.seis);
 
 # Demo
 
-See, how it's working: [https://runkit.com/lopatnov/namespace-demo](https://runkit.com/lopatnov/namespace-demo)
+See, how it's working: [https://runkit.com/lopatnov/namespace-demo-1.3.2](https://runkit.com/lopatnov/namespace-demo-1.3.2)
 
 Test it with a runkit: [https://npm.runkit.com/@iyuo/namespace](https://npm.runkit.com/@iyuo/namespace)
 
