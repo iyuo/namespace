@@ -1,10 +1,10 @@
 {
     "name": "@iyuo/namespace",
     "version": "1.3.2",
-    "description": "The TypeScript plugin Namespace for @iyuo/context ecosystem.",
+    "description": "TypeScript plugin the Namespace for @iyuo/context ecosystem. Dynamic namespace creation",
     "author": "lopatnov",
     "license": "Apache-2.0",
-    "homepage": "https://iyuo.github.io/context/",
+    "homepage": "https://iyuo.github.io/namespace/",
     "umdName": "iyuo",
     "source": "src/namespace.ts",
     "main": "dist/namespace.js",
@@ -13,10 +13,10 @@
     "types": "dist/namespace.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/iyuo/context.git"
+        "url": "git+https://github.com/iyuo/namespace.git"
     },
     "bugs": {
-        "url": "https://github.com/iyuo/context/issues"
+        "url": "https://github.com/iyuo/namespace/issues"
     },
     "keywords": [
         "context",
