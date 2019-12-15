@@ -13,7 +13,7 @@
     "types": "dist/namespace.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/iyuo/namespace.git"
+        "url": "git+https://github.com/iyuo/context.git"
     },
     "bugs": {
         "url": "https://github.com/iyuo/namespace/issues"
