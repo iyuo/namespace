@@ -28,8 +28,8 @@
         "watch": "rollup -c rollup.config.ts -w",
         "test": "jest",
         "prepare": "npm i --no-save --no-package-lock @iyuo/context",
-        "publish-npm": "node ./publish-gpr.js -s https://registry.npmjs.org",
-        "publish-gpr": "node ./publish-gpr.js -s https://npm.pkg.github.com"
+        "config-npm": "node ./config-repo.js -s https://registry.npmjs.org",
+        "config-gpr": "node ./config-repo.js -s https://npm.pkg.github.com"
     },
     "files": [
         "dist"
