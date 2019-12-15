@@ -59,6 +59,29 @@ new Context(obj)
 .task(ns("quatro.cinco.seis"));
 
 console.log(obj);
+
+/*
+{
+    uno: {
+        name: "uno",
+        dos: {
+            name: "dos",
+            tres: {
+                name: "tres"
+            }
+        }
+    },
+    quatro: {
+        name: "quatro",
+        cinco: {
+            name: "cinco",
+            seis: {
+                name: "seis"
+            }
+        }
+    }
+}
+*/
 ```
 
 # Function Sample
