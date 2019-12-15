@@ -2,9 +2,17 @@
 
 [![NPM version](https://badge.fury.io/js/%40iyuo%2Fnamespace.svg)](https://www.npmjs.com/package/@iyuo/namespace)
 [![License](https://img.shields.io/github/license/iyuo/namespace)](https://github.com/iyuo/namespace/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnamespace)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnamespace)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40iyuo%2Fnamespace)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40iyuo%2Fnamespace)
 
 TypeScript plugin the Namespace for [@iyuo/context](https://iyuo.github.io/context/) ecosystem. Dynamic namespace creation
+
+# Requirements
+
+Install [@iyuo/context](https://iyuo.github.io/context/).
+
+```shell
+npm install @iyuo/context
+```
 
 # Install
 
