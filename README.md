@@ -43,6 +43,7 @@ or JavaScript:
 ```javascript
 var iyuo = require("@iyuo/namespace");
 var namespace = iyuo.namespace;
+var ns = iyuo.ns;
 ```
 
 # Documentation
